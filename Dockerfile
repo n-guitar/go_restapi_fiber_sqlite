@@ -6,7 +6,10 @@ WORKDIR /app
 RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
-FROM alpine:3.13 AS production
+FROM alpine:3.14 AS production
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache sqlite
 COPY --from=builder /app /app
 WORKDIR /app
 CMD [ "./main" ]
