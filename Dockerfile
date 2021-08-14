@@ -10,6 +10,7 @@ FROM alpine:3.14 AS production
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache sqlite
+RUN mkdir /data
 COPY --from=builder /app /app
 WORKDIR /app
 CMD [ "./main" ]
