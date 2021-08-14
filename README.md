@@ -1,2 +1,4 @@
 # go_restapi_fiber_sqlite
 
+fiberを使ってrestapiを実装する。
+またsqliteに書き込みする
