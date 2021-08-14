@@ -4,7 +4,7 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 RUN go mod download
-RUN CGO_ENABLED=0 GOOS=linux go build -o main .
+RUN CGO_ENABLED=1 GOOS=linux go build -o main .
 
 FROM alpine:3.14 AS production
 RUN apk update && \
