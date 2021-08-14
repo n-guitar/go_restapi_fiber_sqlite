@@ -1,5 +1,5 @@
 FROM golang:1.16.4 AS builder
-LABEL n-guitar (https://github.com/n-guitar)
+LABEL maintainer="github.com/n-guitar"
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
